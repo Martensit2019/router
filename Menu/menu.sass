@@ -1,0 +1,82 @@
+@import '@/assets/styles/variables'
+
+.menu
+  overflow-x: scroll
+  max-height: calc(100vh - 344px)
+  -ms-overflow-style: none /* Internet Explorer 10+ */
+  scrollbar-width: none
+
+  &::-webkit-scrollbar
+    display: none /* Safari and Chrome */
+
+  &__list
+    padding-left: 0
+    margin-bottom: 20px
+
+  &__item
+    background: $color-bg-button-sidebar
+    border-radius: 8px
+    font-weight: 600
+    font-size: 14px
+    line-height: 20px
+    align-items: center
+    font-feature-settings: 'pnum' on, 'lnum' on
+    color: $color-text-button-sidebar
+    padding: 12px
+    margin-bottom: 20px
+    display: flex
+    cursor: pointer
+    min-height: 36px
+
+  &__item_level
+    font-weight: 600
+    font-size: 14px
+    line-height: 20px
+    color: $color-text-inverted
+    padding: 10px 12px 13px 30px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    cursor: pointer
+
+  &__item
+    &.active
+      background: $color-bg-button-sidebar-press
+      color: $color-text-button-sidebar-press
+
+    &.hidden
+      text-align: center
+      justify-content: center
+
+  &__item_content
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+
+  &__item_title
+    margin-left: 12px
+
+  &__item_children
+    font-weight: 600
+    font-size: 14px
+    line-height: 20px
+    color: $color-text-inverted
+    padding: 10px 0 13px 30px
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    &.active > span
+      position: relative
+
+      &:after
+        content: ''
+        top: 50%
+        left: -20px
+        transform: translateY(-50%)
+        position: absolute
+        width: 6px
+        height: 6px
+        border-radius: 50%
+        background: $color-text-inverted
